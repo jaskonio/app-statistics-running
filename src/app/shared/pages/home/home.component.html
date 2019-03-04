@@ -1,3 +1,4 @@
-<p>
-  home works!
-</p>
+
+<a *ngFor="let league of leagues" >
+      <app-ranking-card [league]="league" (click)="onSelect(league)"></app-ranking-card>
+  </a>

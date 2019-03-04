@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AppConfig } from './../../../config/app.config';
+import { Component, OnInit, Input } from '@angular/core';
+import { ILeague } from '../../interfaces/ILeague';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ranking-card',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RankingCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() league: ILeague;
+
+  constructor( private router: Router) { }
 
   ngOnInit() {
   }
 
+  seeHeroDetails(id: number): void {
+    this.router.navigate([AppConfig.routes.rankings + '/' + id]);
+  }
 }

@@ -1,0 +1,21 @@
+.container  {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.container .row {
+  margin: 0 auto;
+}
+
+.toolbar-fullscreen {
+  display: none;
+}
+
+.toolbar-filler {
+  flex: 1 1 auto
+}

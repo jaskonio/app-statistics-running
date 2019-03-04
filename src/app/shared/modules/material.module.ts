@@ -14,7 +14,8 @@ import {
   MatSnackBarModule,
   MatTooltipModule,
   MatToolbarModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatDividerModule,
 } from '@angular/material';
 import {NgModule} from '@angular/core';
 
@@ -35,7 +36,8 @@ import {NgModule} from '@angular/core';
     MatListModule,
     MatDialogModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDividerModule
   ],
   exports: [
     MatButtonModule,
@@ -53,7 +55,8 @@ import {NgModule} from '@angular/core';
     MatListModule,
     MatDialogModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDividerModule
   ],
 })
 

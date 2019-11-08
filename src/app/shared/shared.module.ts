@@ -9,6 +9,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from './modules/material.module';
+import { TableBaseComponent } from './components/tableBase/tableBase.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,13 @@ import { MaterialModule } from './modules/material.module';
     LoadingPlaceholderComponent,
     SpinnerComponent,
     Error404Component,
-    HomeComponent
+    HomeComponent,
+    TableBaseComponent
   ],
   imports: [
     MaterialModule,
-    CommonModule
+    CommonModule,
+    MatTableModule,
   ],
   exports: [
     MaterialModule,
@@ -34,7 +38,8 @@ import { MaterialModule } from './modules/material.module';
     LoadingPlaceholderComponent,
     SpinnerComponent,
     Error404Component,
-    HomeComponent
+    HomeComponent,
+    TableBaseComponent
   ]
 })
 export class SharedModule { }

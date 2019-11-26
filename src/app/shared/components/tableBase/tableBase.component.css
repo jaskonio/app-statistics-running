@@ -1,2 +1,14 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+.mat-table {
+    max-width: auto !important;
+    width: 100% !important;
+}
+
+.mat-footer-row,
+.mat-header-row,
+.mat-row {
+    display: inline-flex;
+    min-width: 100%;
+    text-align: center;
+}

@@ -10,7 +10,7 @@ import { RankingData } from '../../model/rankingData';
 })
 export class TableBaseComponent {
   @Input('data') data: RankingData[];
-  @Input('displayedColumns') displayedColumns: string[];
+  @Input('columnDefs') columnDefs: { headerName: string; field: string; }[];
 
   pageSizeOptions = [5, 10, 20];
   datasource = new MatTableDataSource<RankingData>();
@@ -25,5 +25,8 @@ export class TableBaseComponent {
     console.log('TableBaseComponent.ngOnInit');
 
     this.datasource = new MatTableDataSource(this.data);
+  }
+  getDisplayedColumns(): string[]{
+    return this.columnDefs.map(cd => cd.field);
   }
 }

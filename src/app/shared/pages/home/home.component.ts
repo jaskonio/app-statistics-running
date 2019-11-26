@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ILeague } from '../../interfaces/ILeague';
 import { Router } from '@angular/router';
 import { AppConfig } from 'src/app/config/app.config';
+import { RedolatTeamService } from '../../service/redolat-team.service';
 
 @Component({
   selector: 'app-home',
@@ -9,19 +10,21 @@ import { AppConfig } from 'src/app/config/app.config';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  leagues: ILeague[] = [];
 
-  leagues: any[] = [
-    {id: 1, name: 'League 1', urlImg: 'https://images.clarin.com/2015/03/21/SkbZeI9Tml_1256x620.jpg'},
-    {id: 2, name: 'League 2', urlImg: 'https://images.clarin.com/2015/03/21/SkbZeI9Tml_1256x620.jpg'},
-    {id: 3, name: 'League 3', urlImg: 'https://images.clarin.com/2015/03/21/SkbZeI9Tml_1256x620.jpg'},
-  ];
-
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private redolatTeamService: RedolatTeamService) {
+                this.leagues = this.loadLeagues();
+              }
 
   ngOnInit() {
   }
 
   onSelect(league: ILeague) {
     this.router.navigateByUrl( AppConfig.routes.rankings + '/' + league.id);
+  }
+
+  loadLeagues(): ILeague[] {
+    return this.redolatTeamService.GetLeague();
   }
 }

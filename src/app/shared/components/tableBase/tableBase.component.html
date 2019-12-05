@@ -1,9 +1,8 @@
-<mat-table [dataSource]="data" matSort class="mat-cell" class="mat-elevation-z8">
+<mat-table [dataSource]="data" matSort class="mat-cell" ngClass="mat-elevation-z8">
     
-    <ng-container *ngFor="let column of columnDefs" matColumnDef="{{column.field}}">        
-        <mat-header-cell *matHeaderCellDef>{{ column.headerName }}</mat-header-cell>
-        <!--<mat-header-cell *matHeaderCellDef>{{column.headerName}}</mat-header-cell>-->
-        <mat-cell *matCellDef="let element"> {{element[column.field]}} </mat-cell>
+    <ng-container *ngFor="let column of columnDefs" matColumnDef="{{column.field}}">
+        <mat-header-cell *matHeaderCellDef  ngClass="{{ column.field }}" >{{ column.headerName }}</mat-header-cell>
+        <mat-cell *matCellDef="let element" ngClass="{{column.field}}" > {{element[column.field]}} </mat-cell>
     </ng-container>
     
     <mat-header-row *matHeaderRowDef="getDisplayedColumns()"></mat-header-row>

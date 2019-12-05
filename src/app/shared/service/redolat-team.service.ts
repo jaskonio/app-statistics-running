@@ -12,7 +12,6 @@ export class RedolatTeamService {
   }
 
   GetLeague(): ILeague[] {
-
     console.log('GetLeague');
 
     const leagues: ILeague[] = [];
@@ -38,7 +37,7 @@ export class RedolatTeamService {
     position: 1,
     points: 1564,
     photo_url: 'http://test.com/Asdasd',
-    full_name: 'Jonatan Lopez',
+    full_name: 'Jonatan Antonio Lopez',
     postion_lasted: 1,
     num_top_five: 5,
     num_participations: 10,

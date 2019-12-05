@@ -1,45 +1,45 @@
-<mat-sidenav-container>
-    <mat-sidenav #sidenav mode="push" class="app-sidenav">
+<mat-sidenav-container class="all-wrap">
 
-      <mat-toolbar color="primary">
-        <!--future svg to go here-->
-        <span class="toolbar-filler"></span>
-        <p>Menu</p>
-        <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="!sidenav.opened">
-          <mat-icon aria-label="Menu" class="material-icons">close</mat-icon>
-        </button>
-      </mat-toolbar>
+  <mat-sidenav #sidenav mode="push" class="app-sidenav">
 
-      <mat-nav-list>
-        <a mat-list-item class="sidenav-link" [routerLink]="['/']" (click)="sidenav.toggle()">
-          <mat-icon mat-list-icon>home</mat-icon>
-          <span class="title" mat-line>Home</span>
-          <span mat-line class="secondary">test</span>
-        </a>
-        <a mat-list-item class="sidenav-link" [routerLink]="['/rankings']" (click)="sidenav.toggle()">
-          <mat-icon mat-list-icon>show_chart</mat-icon>
-          <span class="title" mat-line>Leagues</span>
-          <span mat-line class="secondary">test</span>
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
+    <mat-toolbar color="primary">
+      <span class="toolbar-filler"></span>
+      <p>Menu</p>
+      <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="!sidenav.opened">
+        <mat-icon aria-label="Menu" class="material-icons">close</mat-icon>
+      </button>
+    </mat-toolbar>
+    
+    <mat-nav-list>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>home</mat-icon>
+        <span class="title" mat-line>Home</span>
+      </a>
+      <a mat-list-item class="sidenav-link" [routerLink]="['/rankings']" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>show_chart</mat-icon>
+        <span class="title" mat-line>Leagues</span>
+      </a>
+    </mat-nav-list>
+  
+  </mat-sidenav>
+
+  <mat-sidenav-content class="page-wrap">
 
     <mat-toolbar id="appToolbar"  color="primary">
       <button mat-icon-button (click)="sidenav.toggle()" class="mat-icon-button sidenav-toggle-button" [hidden]="sidenav.opened">
-              <mat-icon aria-label="Menu" class="material-icons">menu</mat-icon>
+        <mat-icon aria-label="Menu" class="material-icons">menu</mat-icon>
       </button>
       <h1 class="component-title">
-        <a class="title-link">Statistics Team</a>
+        <a class="title-link"></a>
       </h1>
-      <span class="toolbar-filler"></span>
-      <!--<button id="button-login" mat-button [routerLink]="['/signupin']" *ngIf="!(user | async)">Log In</button>-->
-      <button id="button-logout" mat-button>Log Out</button>
     </mat-toolbar>
 
-  <div class="container" >
-      <div class="row">
-        <router-outlet></router-outlet>
-      </div>
-  </div>
+    <div class="content" >
+      <router-outlet></router-outlet>
+    </div>
 
-  </mat-sidenav-container>
+    <app-footer></app-footer>
+  
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

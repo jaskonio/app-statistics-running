@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from './modules/material.module';
 import { TableBaseComponent } from './components/tableBase/tableBase.component';
 import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MatTableModule } from '@angular/material/table';
     MaterialModule,
     CommonModule,
     MatTableModule,
+    HttpClientModule
   ],
   exports: [
     MaterialModule,

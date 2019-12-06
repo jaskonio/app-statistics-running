@@ -19,16 +19,19 @@ export class RankingDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.runnersData = this.GetRunners();
-    this.columnDefs = this.ColumnsDefinitions();
+    this.GetRunners();
+    this.ColumnsDefinitions();
   }
 
-  GetRunners(): RankingData[] {
-    return this.redolatTeamService.GetRankinsFromLeague(this.leagueId);
+  GetRunners() {
+    return this.redolatTeamService.GetRankinsFromLeague(this.leagueId).subscribe( (resp: RankingData[]) => {
+      this.runnersData = resp;
+    });
   }
 
-  ColumnsDefinitions(): { headerName: string; field: string; }[] {
-    return this.redolatTeamService.GetColumnsDefinition();
+  ColumnsDefinitions() {
+    this.redolatTeamService.GetColumnsDefinition().subscribe( (resp: { headerName: string; field: string; }[] ) => {
+      this.columnDefs = resp;
+    });
   }
 }
-

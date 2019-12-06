@@ -14,17 +14,20 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router,
               private redolatTeamService: RedolatTeamService) {
-                this.leagues = this.loadLeagues();
               }
 
   ngOnInit() {
+    this.loadLeagues();
   }
 
   onSelect(league: ILeague) {
     this.router.navigateByUrl( AppConfig.routes.rankings + '/' + league.id);
   }
 
-  loadLeagues(): ILeague[] {
-    return this.redolatTeamService.GetLeague();
+  loadLeagues() {
+    this.redolatTeamService.GetLeague().subscribe( (resp: ILeague[]) => {
+      console.log(resp);
+      this.leagues = resp;
+    });
   }
 }

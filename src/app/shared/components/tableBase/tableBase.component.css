@@ -1,12 +1,14 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 mat-table {
-    height: 400px;
-    width: 900px;
-    overflow: auto;
+    height: 100%;
+    width: 850px; 
+    margin: 0px;
+    padding: 0px;
 }
+
 .mat-header-cell {
-    justify-content: center;
+    /*justify-content: center;*/
     text-align: center;
 }
 
@@ -21,9 +23,19 @@ mat-table {
 }
 
 .mat-column-points {
-    flex: 0 0 50px;
+    flex: 0 0 10%;
 }
 
 .mat-column-full_name {
-    flex: 0 0 150px;
+    flex: 0 0 20%;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width:640px) {
+}
+
+@media screen and (max-width:1024px) and (min-width:640px) {
+}
+
+@media screen and (min-width:1024px) {
 }
